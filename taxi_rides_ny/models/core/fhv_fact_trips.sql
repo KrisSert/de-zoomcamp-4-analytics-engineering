@@ -5,8 +5,7 @@
 }}
 
 with fhv_tripdata as (
-    select *, 
-        'Green' as service_type
+    select *
     from {{ ref('stg_fhv_tripdata') }}
 ),
 
