@@ -127,3 +127,16 @@ models:
       - name: payment_type_description
         data_type: string
         description: ""
+
+  - name: fhv_fact_trips
+    description: >
+      FHV fact trips.
+    columns:
+      - name: tripid
+      - name: pickup_datetime
+      - name: dropoff_datetime
+      - name: dispatching_base_num
+      - name: affiliated_base_number
+      - name: pickup_locationid
+      - name: dropoff_locationid
+      - name: sr_flag

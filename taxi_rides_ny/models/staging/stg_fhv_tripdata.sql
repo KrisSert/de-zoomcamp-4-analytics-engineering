@@ -21,10 +21,10 @@ select
     -- trip info
     {{ dbt.safe_cast("SR_Flag", api.Column.translate_type("integer")) }} as sr_flag,
     
-
 from {{ source('staging','fhv_tripdata') }}
-where --  with pickup time in year 2019
-    extract(year from pickup_datetime) == '2019' 
+where 
+-- with pickup time in year 2019
+CAST(EXTRACT(YEAR FROM pickup_datetime) AS STRING) = '2019'
 
 
 -- dbt build --select <model_name> --vars '{'is_test_run': 'false'}'
