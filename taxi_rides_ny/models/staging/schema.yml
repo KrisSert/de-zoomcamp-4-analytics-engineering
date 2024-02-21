@@ -11,6 +11,7 @@ sources:
       - name: yellow_tripdata
          # freshness:
            # error_after: {count: 6, period: hour}
+      - name: fhv_tripdata
 
 models:
     - name: stg_green_tripdata
@@ -195,3 +196,16 @@ models:
             description: Total amount of all tolls paid in trip.
           - name: Total_amount 
             description: The total amount charged to passengers. Does not include cash tips.
+    - name: stg_fhv_tripdata
+      description: > 
+        Trips made by New York City's FHV (for-hire) vechicles. 
+        For-Hire Vehicle (“FHV”) trip records include fields capturing the dispatching base license number and the pick-up date, time, and taxi zone location ID (shape file below).
+        These records are generated from the FHV Trip Record submissions made by bases.
+      columns:
+          - name: dispatching_base_num
+          - name: pickup_datetime
+          - name: dropOff_datetime
+          - name: PUlocationID
+          - name: DOlocationID
+          - name: SR_Flag
+          - name: Affiliated_base_number
